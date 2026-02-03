@@ -76,3 +76,9 @@ should be created to merge into main.
 ## Introduction
 
 *One-paragraph summary of the board and its purpose on the bike*
+
+## Build Instructions (Debian-based)
+
+`apt-get install clang-tools cmake build-essentials gcc-arm-none-eabi`
+
+`GCC_ARM_TOOLS_PATH=/usr/bin cmake . -B build`
