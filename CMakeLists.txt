@@ -33,6 +33,9 @@ add_compile_definitions(USE_HAL_DRIVER)
 # Run EVT-core CMake files
 ###############################################################################
 set(EVT_CORE_DIR      ${CMAKE_SOURCE_DIR}/libs/EVT-core)
+#set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/libs)
+#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/libs)
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin)
 
 # Link to the EVT-core library
 add_subdirectory(libs/EVT-core/)
