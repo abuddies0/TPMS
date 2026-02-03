@@ -12,3 +12,6 @@ venv/
 
 # macOS files
 .DS_Store
+
+# Libraries
+libs/

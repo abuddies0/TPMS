@@ -71,8 +71,14 @@ building functionality.
 below. When finished, all the changes should be committed and pushed to the setup branch, and a PR
 should be created to merge into main.
 
-# BIKE_NAME-BOARD_NAME
+# BIKE-TPMS
 
 ## Introduction
 
 *One-paragraph summary of the board and its purpose on the bike*
+
+## Build Instructions (Debian-based)
+
+`apt-get install clang-tools cmake build-essentials gcc-arm-none-eabi`
+
+`GCC_ARM_TOOLS_PATH=/usr/bin cmake . -B build`

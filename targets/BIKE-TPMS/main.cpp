@@ -4,15 +4,15 @@
  * enters.
  */
 
-#include <EVT/io/UART.hpp>
-#include <EVT/manager.hpp>
-#include <EVT/io/pin.hpp>
+#include <core/io/UART.hpp>
+#include <core/manager.hpp>
+#include <core/io/pin.hpp>
 
-namespace IO = EVT::core::IO;
+namespace IO = core::io;
 
 int main() {
     // Initialize system
-    EVT::core::platform::init();
+    core::platform::init();
 
     // Setup UART
     IO::UART& uart = IO::getUART<IO::Pin::UART_TX, IO::Pin::UART_RX>(9600);

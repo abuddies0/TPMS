@@ -1,4 +1,6 @@
 [submodule "libs/EVT-core"]
 	path = libs/EVT-core
-	url = ../EVT-core.git
-    # Need to set the full url if not cloned into the EVT organization
+	url = https://github.com/RIT-EVT/EVT-core.git
+[submodule "libs/GSDK"]
+	path = libs/GSDK
+	url = https://github.com/SiliconLabs/gecko_sdk.git

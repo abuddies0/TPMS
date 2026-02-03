@@ -33,6 +33,9 @@ add_compile_definitions(USE_HAL_DRIVER)
 # Run EVT-core CMake files
 ###############################################################################
 set(EVT_CORE_DIR      ${CMAKE_SOURCE_DIR}/libs/EVT-core)
+#set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/libs)
+#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/libs)
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin)
 
 # Link to the EVT-core library
 add_subdirectory(libs/EVT-core/)
@@ -44,7 +47,7 @@ include(${EVT_CORE_DIR}/cmake/evt-core_install.cmake)
 ###############################################################################
 # Project Setup
 ###############################################################################
-set(BOARD_LIB_NAME BOARD_NAME)
+set(BOARD_LIB_NAME TPMS)
 if("${BOARD_LIB_NAME}" STREQUAL BOARD_NAME)
     message(FATAL_ERROR
             "You must set the template project name in the top-level CMakeLists.txt")
@@ -57,13 +60,19 @@ project(${BOARD_LIB_NAME}
         LANGUAGES CXX C
         )
 
+set(PROJECT_NAME TPMS)
+
 add_library(${PROJECT_NAME} STATIC)
 
 # Add sources
 target_sources(${PROJECT_NAME} PRIVATE
         src/dev/LED.cpp
-        src/BOARD_NAME.cpp
+        src/TPMS.cpp
         )
+##########################################
+# Add GDSK
+##########################################
+#target_include_directories(${PROJECT_NAME} PRIVATE /libs/GDSK)
 
 ###############################################################################
 # Handle dependencies
@@ -71,6 +80,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 target_link_libraries(${PROJECT_NAME}
         PUBLIC EVT
         )
+#target_link_libraries(${PROJECT_NAME} PRIVATE GDSK)
 
 ###############################################################################
 # Install and expose library
